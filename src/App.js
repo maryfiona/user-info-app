@@ -20,6 +20,7 @@ function App() {
       [name]: value,
     }));
   };
+  
   const handleImageChange = (event) => {
     const imageFile = event.target.files[0];
     setFormData((prevData) => ({
@@ -35,18 +36,20 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className='lab'>
           Full Name:
-          <input
+          <input 
+          className='in'
             type="text"
             name="fullName"
             value={formData.fullName}
             onChange={handleInputChange}
           />
         </label>
-        <label>
+        <label className='lab'>
   Email Address:
   <input
+    className='in'
     type="email"
     name="email"
     value={formData.email}
@@ -54,9 +57,10 @@ function App() {
     required
   />
 </label>
-<label>
+<label className='lab'>
   Address:
   <input
+    className='in'
     type="text"
     name="address"
     value={formData.address}
@@ -64,9 +68,10 @@ function App() {
     required
   />
 </label>
-<label>
+<label className='lab'>
   Date of Birth:
   <input
+    className='in'
     type="date"
     name="dob"
     value={formData.dob}
@@ -74,8 +79,8 @@ function App() {
     required
   />
 </label>
-<label>
-  Gender:
+<label className='lab'>
+Gender:
   <select
     name="gender"
     value={formData.gender}
@@ -103,7 +108,7 @@ function App() {
 
         
         {/* Add similar input fields for other form fields */}
-        <button type="submit">Submit</button>
+        <button className='sub' type="submit">Submit</button>
       </form>
 
 {showPopup && (
